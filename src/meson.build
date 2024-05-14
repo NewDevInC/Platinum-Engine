@@ -6,6 +6,7 @@ source_headers = ['PlatinumEngine.hpp',
                   'SilverRenderer.hpp',
                   'VAO.hpp',
                   'VBO.hpp',
+                  'EBO.hpp',
                   'Shader.hpp',
                   'Mesh.hpp',
                   'glmIncludes.hpp']
@@ -15,6 +16,7 @@ source_cpp = ['glad.c',
               'SilverRenderer.cpp',
               'VAO.cpp',
               'VBO.cpp',
+              'EBO.cpp',
               'Shader.cpp',
               'Mesh.cpp']
 

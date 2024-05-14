@@ -22,14 +22,14 @@ void SilverRenderer::updateScreen(SDL_Window* _window, int width, int height) {
     glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
     for (auto mesh: this->meshStack)
-        mesh.Draw();
+        mesh->Draw();
 
 
     SDL_GL_SwapWindow(_window);
 }
 
 void SilverRenderer::pushToMeshStack(Mesh* &mesh) {
-    this->meshStack.push_back(*mesh);
+    this->meshStack.push_back(mesh);
 
 }
 

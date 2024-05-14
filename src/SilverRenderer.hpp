@@ -18,7 +18,7 @@
 
 class SilverRenderer {
 private:
-    std::vector<Mesh> meshStack;
+    std::vector<Mesh *> meshStack;
 public:
     SilverRenderer();
     void updateScreen(SDL_Window* _window, int width, int height);

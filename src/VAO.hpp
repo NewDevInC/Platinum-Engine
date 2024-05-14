@@ -8,6 +8,7 @@
 #include <glad.h>
 #include <glmIncludes.hpp>
 #include <VBO.hpp>
+#include <EBO.hpp>
 
 
 class VAO {

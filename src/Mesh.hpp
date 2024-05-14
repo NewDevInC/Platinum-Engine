@@ -9,16 +9,21 @@
 #include <vector>
 #include <glmIncludes.hpp>
 #include <VAO.hpp>
+#include <VBO.hpp>
+#include <EBO.hpp>
 #include <Shader.hpp>
 
 class Mesh {
 private:
     std::vector<Vertex> vertices;
+    std::vector <GLuint> indices;
     Shader* shader;
     VAO VAO;
+    VBO *VBO;
+    EBO *EBO;
 
 public:
-    explicit Mesh(std::vector<Vertex> &vertices, Shader* shader);
+    Mesh(std::vector <Vertex> &vertices, std::vector <GLuint> &indices, Shader *shader);
     void Draw();
 
 };
