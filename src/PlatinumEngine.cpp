@@ -40,6 +40,7 @@ PlatinumEngine::PlatinumEngine(int width, int height, const char* title) {
 void PlatinumEngine::updateScreen(){
     this->_silverRender->updateScreen(this->_window, this->width, this->height);
 
+
 }
 void PlatinumEngine::addMesh(Mesh *mesh) {
     this->_silverRender->pushToMeshStack(mesh);

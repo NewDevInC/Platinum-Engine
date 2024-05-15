@@ -1,5 +1,5 @@
 project('PlatinumEngine', 'c', 'cpp',
-        version : '0.0.4',
+        version : '0.0.5',
         default_options : ['warning_level=3', 'cpp_std=gnu++17', 'destdir=H:\Projects\Programming\C++\OpenGL\buildDir\bin'])
 
 subdir('src')

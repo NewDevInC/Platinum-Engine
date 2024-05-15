@@ -1,2 +1,3 @@
 buildDir
 .idea
+subprojects/glm-1.0.1/doc

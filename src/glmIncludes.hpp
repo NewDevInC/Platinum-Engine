@@ -23,3 +23,7 @@
 #include <glm/geometric.hpp>          // all the GLSL geometry functions: dot, cross, reflect, etc.
 #include <glm/matrix.hpp>             // all the GLSL matrix functions: transpose, inverse, etc.
 #include <glm/trigonometric.hpp>      // all the GLSL trigonometric functions: radians, cos, asin, etc.
+#include <glm/ext/matrix_transform.hpp>             // translate, rotate
+#include <glm/ext/matrix_clip_space.hpp>            // perspective
+
+#include <glm/gtc/type_ptr.hpp>

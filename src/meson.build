@@ -2,15 +2,6 @@
 # not the executables that use the library.
 lib_args = ['-DBUILDING_MESON_LIBRARY']
 
-source_headers = ['PlatinumEngine.hpp',
-                  'SilverRenderer.hpp',
-                  'VAO.hpp',
-                  'VBO.hpp',
-                  'EBO.hpp',
-                  'Shader.hpp',
-                  'Mesh.hpp',
-                  'glmIncludes.hpp']
-
 source_cpp = ['glad.c',
               'PlatinumEngine.cpp',
               'SilverRenderer.cpp',
@@ -18,9 +9,8 @@ source_cpp = ['glad.c',
               'VBO.cpp',
               'EBO.cpp',
               'Shader.cpp',
-              'Mesh.cpp']
-
-source = source_headers + source_cpp
+              'Mesh.cpp',
+]
 
 include = include_directories('../include')
 
@@ -28,7 +18,7 @@ glm = dependency('glm')
 sdl2 = dependency('sdl2')
 sdl2_main = dependency('sdl2main')
 
-engine = static_library('OpenGL_Engine', source,
+engine = static_library('OpenGL_Engine', source_cpp,
                         install : true,
                         install_dir : 'H:/Projects/Programming/C++/OpenGL/buildDir/bin/',
                         c_args : lib_args,

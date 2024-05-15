@@ -29,7 +29,28 @@ Mesh::Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices, Shader *
 
 void Mesh::Draw() {
     this->shader->activateShader();
+
+    auto model = glm::mat4(1.0f);
+    auto view = glm::mat4(1.0f);
+    auto projection = glm::mat4(1.0f);
+
+    view = glm::translate(view, glm::vec3(0.0f, -0.5f, -2.0f));
+    projection = glm::perspective(glm::radians(90.0f), float(640) / float(640), 0.1f, 100.0f);
+
+    Uint64 currentTime = SDL_GetTicks64();
+    if (currentTime - this->previousTime >= 1) {
+        this->rotation += 0.5f;
+        this->previousTime = currentTime;
+    };
+
+    model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 1.0f, 0.0f));
+
+    glUniformMatrix4fv(2, 1, GL_FALSE, glm::value_ptr(model));
+    glUniformMatrix4fv(3, 1, GL_FALSE, glm::value_ptr(view));
+    glUniformMatrix4fv(4, 1, GL_FALSE, glm::value_ptr(projection));
+
     this->VAO.bindVAO();
+
     glDrawElements(GL_TRIANGLES, this->indices.size(), GL_UNSIGNED_INT, nullptr);
 
 }
